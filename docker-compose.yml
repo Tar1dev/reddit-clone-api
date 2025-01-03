@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=hNDAKeubDNAEKuhdNAEd
+      - MYSQL_DATABASE=reddit
+      - MYSQL_USER=reddit_user
+      - MYSQL_PASSWORD=DNaekadnkeadnDGAb
+    volumes:
+      - reddit_data:/var/lib/mysql
+
+volumes:
+  reddit_data:

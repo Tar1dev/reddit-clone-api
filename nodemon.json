@@ -1,0 +1,5 @@
+{
+  "watch": ["."],
+  "ext": ".js",
+  "exec": "bun run index.js"
+}
