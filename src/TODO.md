@@ -1,0 +1,3 @@
+- Add Subreddits
+- Add file upload (maybe AWS S3)
+- Write unit tests
