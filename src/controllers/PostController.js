@@ -38,11 +38,7 @@ exports.getAllPosts = async (req, res) => {
 
 exports.getPostById = async (req, res) => {
     try {
-        const post = await Post.findOne({
-            where: {
-                id: req.params.id
-            }
-        });
+        const post = await Post.findByPk(req.params.id);
 
         res.status(200).json(post);
     } catch (e) {

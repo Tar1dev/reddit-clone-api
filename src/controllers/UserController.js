@@ -13,7 +13,7 @@ exports.getAllUsers = async (req, res) => {
 
 exports.getUserById = async (req, res) => {
     try {
-        const user = await User.findByPk(req.params.userId);
+        const user = await User.findByPk(req.params.id);
 
         if (!user) {
             return res.status(404).json({message: "User not found"});
