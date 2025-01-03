@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('./src/database');
+const db = require('./database/database.js');
 
 const routes = require('./src/routes/main');
 
@@ -14,6 +14,9 @@ try {
 } catch (error) {
     console.error('Unable to connect to the database:', error);
 }
+
+// sync the database
+require('./database/synchronize.js');
 
 app.use(express.json());
 app.use('/api/v1/', routes);

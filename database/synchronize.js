@@ -1,9 +1,7 @@
-const {Sequelize} = require('sequelize');
-
-const database = new Sequelize({
-    dialect:'sqlite',
-    storage:'./storage/dev.sqlite',
-})
+const database = require('./database.js');
+const User = require('../src/models/User.js');
+const Post = require('../src/models/Post.js');
+require('./associations.js')
 
 database.sync({ force: false })
 .then(() => {
@@ -12,5 +10,3 @@ database.sync({ force: false })
 .catch((error) => {
     console.error("Error synchronizing the database:", error);
 });
-
-module.exports = database;
